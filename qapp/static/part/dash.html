@@ -1,0 +1,19 @@
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <h2>Your Files</h2>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <form action="/api/fileupload" method="post" accept-charset="utf-8"
+            enctype="multipart/form-data">
+              <button type="submit" class="btn btn-sm btn-success pull-right" value="submit">Upload</button>
+              <label>Select CSV File To Upload</label>
+              <input name="csv" type="file" accept=".csv" value="" />
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

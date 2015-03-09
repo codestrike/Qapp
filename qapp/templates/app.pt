@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="Qapp">
+<head>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${title}</title>
+  <script type="text/javascript" src="${request.static_url('qapp:static/lib/angular.js')}"></script>
+  <script type="text/javascript" src="${request.static_url('qapp:static/lib/cookies.js')}"></script>
+  <script type="text/javascript" src="${request.static_url('qapp:static/lib/angular-ui-router.js')}"></script>
+  <script type="text/javascript" src="${request.static_url('qapp:static/lib/ui-bootstrap-tpls-0.12.0.js')}"></script>
+  <script type="text/javascript" src="${request.static_url('qapp:static/scripts/qapp.controllers.js')}"></script>
+  <script type="text/javascript" src="${request.static_url('qapp:static/scripts/app.js')}"></script>
+  <link rel="stylesheet" type="text/css" href="${request.static_url('qapp:static/lib/bootstrap.css')}">
+  <link rel="stylesheet" type="text/css" href="${request.static_url('qapp:static/lib/sb-admin-2.css')}">
+  <link rel="stylesheet" type="text/css" href="${request.static_url('qapp:static/lib/metisMenu.css')}">
+</head>
+<body>
+  <div id="wrapper">
+    <div ui-view></div>
+    <div class="panel">
+      Created by Ashish and Indresh in just 2 days. Hack this site and get selected in CodeStrike!
+    </div>
+  </div>
+</body>
+</html>

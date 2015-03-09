@@ -31,6 +31,10 @@ After you fix the problem, please restart the Pyramid application to
 try it again.
 """
 
+@view_config(route_name='app', renderer='templates/app.pt')
+def show_qapp(request):
+    return {'title':'Admin Panel of CodeStrike #221B'}
+
 @view_config(route_name='getq', renderer='json')
 def getq(request):
     return [q.to_dict() for q in DBSession.query(Question).all()]

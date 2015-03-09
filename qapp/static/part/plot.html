@@ -1,0 +1,35 @@
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">Plot
+        <div class="btn-group">
+        <label class="btn btn-outline btn-success" ng-model="imageType" btn-radio="'box'" uncheckable>Box</label>
+        <label class="btn btn-outline btn-success" ng-model="imageType" btn-radio="'histogram'" uncheckable>Histogram</label>
+        <label class="btn btn-outline btn-success" ng-model="imageType" btn-radio="'cluster'" uncheckable>Cluster</label>
+        </div>
+        </h1>
+        
+        <div class="panel panel-default">
+          <div class="panel-heading">Inputs </div>
+          <div class="panel-body" ng-if="imageType=='box'">
+            <label>Column to plot</label>
+            <select class="form-control">
+              <option ng-repeat="c in a3file.col">{{c}}</option>
+            </select>
+          </div>
+          <div class="panel-body" ng-if="imageType=='histogram'">
+            Inputs for histogram plot
+          </div>
+          <div class="panel-footer">
+            <button class="btn btn-success btn-block">Plot</button>
+          </div>
+        </div>
+        <img class="img-responsive" ng-show="{{imageUrl}}" src="{{imageUrl}}">
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>
