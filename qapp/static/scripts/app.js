@@ -23,11 +23,6 @@ window.qapp.config(function($stateProvider, $urlRouterProvider) {
     url: '/questions',
     templateUrl: '/static/part/questions.html',
     controller: 'questionsCtrl'
-  })
-  .state('app.responce', {
-    url: '/responce',
-    templateUrl: '/static/part/responce.html',
-    controller: 'responceCtrl'
   });
 
   // Default redirect
