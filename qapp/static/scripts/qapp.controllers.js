@@ -1,4 +1,4 @@
-angular.module('a3app.controllers', ['ngCookies'])
+angular.module('qapp.controllers', ['ngCookies'])
 .controller('globalCtrl', function($cookies, $http, $rootScope, $scope, $state) {
   $scope.inSession = false;
   $rootScope.inSession = $scope.inSession;

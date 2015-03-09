@@ -1,6 +1,6 @@
-window.a3app = angular.module('Salesrator', ['ui.router', 'ui.bootstrap', 'a3app.controllers']);
+window.qapp = angular.module('Qapp', ['ui.router', 'ui.bootstrap', 'qapp.controllers']);
 
-window.a3app.config(function($stateProvider, $urlRouterProvider) {
+window.qapp.config(function($stateProvider, $urlRouterProvider) {
   // Setup routes
   $stateProvider
   .state('app', {
