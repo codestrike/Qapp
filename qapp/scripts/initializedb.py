@@ -51,7 +51,7 @@ def main(argv=sys.argv):
       number='9898989898', email='ash.gkwd@gmail.com')
     DBSession.add(user)
     # Querstion
-    ops = [{'a':'Delhi', 'b':'Nagpur', 'c':'Mumbai', 'd':'Pune'}]
+    ops = {'a':'Delhi', 'b':'Nagpur', 'c':'Mumbai', 'd':'Pune'}
     q = Question(question='What is capital of MH ?', answer='c',
       question_type='mcq', options=json.dumps(ops))
     DBSession.add(q)

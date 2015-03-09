@@ -1,4 +1,5 @@
 import time
+import json
 
 from sqlalchemy import (
   Column,
@@ -35,7 +36,7 @@ class Question(Base):
   id = Column(Integer, primary_key=True)
   question = Column(Text)
   question_type = Column(Text)
-  options = Column(Text) # JSON object
+  options = Column(Text) # JSON object i.e. python dict
   answer = Column(Text) # One of the key from options JSON String
 
   def to_dict(self, with_answers=False):
@@ -43,7 +44,7 @@ class Question(Base):
       'id': self.id,
       'question': self.question,
       'question_type': self.question_type,
-      'options': dict(self.options)
+      'options': json.loads(self.options)
     }
     if with_answers:
       toDict['answer'] = self.answer
@@ -87,7 +88,7 @@ class Answer(Base):
   def to_dict(self):
     return {
       'user': self.user,
-      'answers': list(self.answers),
+      'answers': json.loads(self.answers),
       'start_time': self.start_time,
       'end_time': self.end_time,
       'duration': int(self.end_time) - int(self.start_time)

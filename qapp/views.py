@@ -3,10 +3,7 @@ from pyramid.view import view_config
 
 from sqlalchemy.exc import DBAPIError
 
-from .models import (
-    DBSession,
-    MyModel,
-    )
+from .models import *
 
 
 @view_config(route_name='home', renderer='templates/mytemplate.pt')
@@ -34,3 +31,21 @@ After you fix the problem, please restart the Pyramid application to
 try it again.
 """
 
+@view_config(route_name='getq', renderer='json')
+def getq(request):
+    return [q.to_dict() for q in DBSession.query(Question).all()]
+
+@view_config(route_name='submita', renderer='json')
+def submita(renderer):
+    data = dict(request.json_body)
+    DBSession.add(Answer(user=data["id"], answers=str(data["answers"]), 
+        start_time=data["start_time"], end_time=data["end_time"]))
+    return {'status':'success'}
+
+@view_config(route_name='submitu', renderer='json')
+def submitu(renderer):
+    data = dict(request.json_body)
+    DBSession.add(User(name=data["name"], branch=data["branch"], year=data["year"],
+      roll=data["roll"], is_diploma=data["is_diploma"], about=data["about"],
+      number=data["number"], email=data["email"]))
+    return {'status':'success', 'userid': DBSession.query(User).filter(User.number==data.number).first()['id']}
