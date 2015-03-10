@@ -39,6 +39,14 @@ def show_qapp(request):
 def getq(request):
     return [q.to_dict() for q in DBSession.query(Question).all()]
 
+@view_config(route_name='setq', renderer='json')
+def setq(request):
+    data = dict(request.json_body)
+    if DBSession.add(Question(question=data['question'], answer=data['answer'],
+      question_type=data['question_type'], options=json.dumps(data['options']))):
+        return {'status':'success'}
+    return {'status':'Failed to add question'}
+
 @view_config(route_name='submita', renderer='json')
 def submita(renderer):
     data = dict(request.json_body)

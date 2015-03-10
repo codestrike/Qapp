@@ -1,0 +1,24 @@
+<div id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>Questions</h1>
+        <ul class="">
+          <li class="" ng-repeat="q in allQ">
+            <p>{{q.question}}</p>
+            <p>{{q.question_type}}</p>
+            <ul class="" ng-if="q.question_type == 'mcq'">
+              <li>{{q.options.a}}</li>
+              <li>{{q.options.b}}</li>
+              <li>{{q.options.c}}</li>
+              <li>{{q.options.d}}</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+</div>

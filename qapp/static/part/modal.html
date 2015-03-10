@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <h3 class="modal-title">Add New Question</h3>
+</div>
+<div class="modal-body">
+    <form name="questionform">
+        <div class="form-group">
+            <label>Question Text</label>
+            <input type="text" class="form-control" ng-model="qfd.question" placeholder="How tall Mt. Fujji is ?">
+        </div>
+
+        <div class="form-group">
+            <label>Question Type</label>
+            <select class="form-control" ng-model="qfd.question_type">
+                <option>MCQ</option>
+                <option>Text</option>
+            </select>
+        </div>
+
+TODO Depending upon type show hide options
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="addQ(qfd)">Add</button>
+</div>
